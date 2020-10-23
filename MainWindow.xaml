@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Claudia_Timoce_Lab2"
         mc:Ignorable="d"
-        Title="Virtual Doughnuts  Factory" Height="450" Width="800" ResizeMode="NoResize" Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
+        Title="Virtual Doughnuts  Factory" Height="450" Width="800" ResizeMode="NoResize" Loaded="frmMain_Loaded"
+        Background="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}">
     <Grid>
         <Label x:Name="lblTitle__" Content="Doughnuts  - Bake &amp; Sale " HorizontalAlignment="Left" Margin="220,13,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="24"/>
         <GroupBox x:Name="gbRaised" Header="Raised" Margin="79,69,457,254" FontWeight="Bold"/>
@@ -33,20 +34,21 @@
         <Button x:Name="btnAddToSale" Content="Add To Sale" HorizontalAlignment="Left" Margin="602,299,0,0" VerticalAlignment="Top"/>
         <Button x:Name="btnRemoveItem_" Content="Remove Item " HorizontalAlignment="Left" Margin="601,324,0,0" VerticalAlignment="Top"/>
         <Button x:Name="btnCheckOut" Content="Check Out " HorizontalAlignment="Left" Margin="601,369,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Menu x:Name="mnuMain" HorizontalAlignment="Left" Height="21" VerticalAlignment="Top" Width="131">
+        <Menu x:Name="mnuMain" HorizontalAlignment="Left" Height="21" VerticalAlignment="Top" Width="131" Margin="0,26,0,0">
             <MenuItem Header="File">
-                <MenuItem Header="Exit"/>
+                <MenuItem Header="Exit" Click="exitToolStripMenuItem_Click"/>
             </MenuItem>
             <MenuItem Header="_Doughnuts">
                 <MenuItem Header="Make">
                     <MenuItem Header="Raised">
-                        <MenuItem x:Name="glazedMenuItem" Header="Glazed"/>
-                        <MenuItem x:Name="sugarMenuItem" Header="Sugar"/>
+                        <MenuItem x:Name="glazedToolStripMenuItem" Header="Glazed" Click="glazedToolStripMenuItem_Click" IsCheckable="True"/>
+                        <MenuItem x:Name="sugarToolStripMenuItem" Header="Sugar" IsCheckable="True" Click="sugarToolStripMenuItem_Click"/>
                     </MenuItem>
                     <MenuItem Header="Filled"/>
                 </MenuItem>
+                <MenuItem x:Name="mnuStop" Header="Stop" Click="stopToolStripMenuItem_Click" />
             </MenuItem>
-
+             
         </Menu>
 
 
